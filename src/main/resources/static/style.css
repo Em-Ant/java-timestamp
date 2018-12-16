@@ -28,6 +28,12 @@ ul {
 	list-style-type: none;
 }
 
+ol, ul {
+	padding-left: 0;
+}
+li {
+	margin-bottom: 8px;
+}
 a {
 	color: #2574A9;
 }
@@ -58,4 +64,10 @@ form label {
 img {
 	margin: 0 auto;
 	display: block;
+}
+
+@media (max-width: 700px) {
+	img {
+		height: 220px;
+	}
 }

@@ -8,15 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 import timestamp.errors.DateParseException;
 
 @RestController
+@RequestMapping("/api/timestamp")
 public class Controller {
-  private static final String API_TIMESTAMP = "/api/timestamp";
-  private static final String API_TIMESTAMP_DATE_STRING = "/api/timestamp/{date_string}";
 
-  @RequestMapping(value = API_TIMESTAMP, method = RequestMethod.GET)
+  @RequestMapping(value = "", method = RequestMethod.GET)
   public Timestamp  now () {
     return new Timestamp();
   } 
-  @RequestMapping(value = API_TIMESTAMP_DATE_STRING, method = RequestMethod.GET)
+  @RequestMapping(value = "/{date_string}", method = RequestMethod.GET)
   public Timestamp fromDateString (
     @PathVariable("date_string") String dateString) throws DateParseException {
 
