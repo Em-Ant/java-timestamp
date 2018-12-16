@@ -13,6 +13,6 @@ public class DateParseExceptionHandler extends ResponseEntityExceptionHandler {
   @ResponseStatus(HttpStatus.BAD_REQUEST)
   @ResponseBody
   CustomError handleBadDateString(DateParseException e) {
-      return new CustomError("Invalid Date");
+      return new CustomError("Invalid Date", HttpStatus.BAD_REQUEST);
   }
 }
