@@ -1,10 +1,8 @@
 package timestamp.errors;
 
-import java.text.ParseException;
-
-public class DateParseException extends ParseException {
+public class DateParseException extends Exception {
   private static final long serialVersionUID = 999L;
-  public DateParseException(String err, int offset) {
-    super(err, offset);
+  public DateParseException() {
+    super();
   }
 }

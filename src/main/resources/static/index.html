@@ -1,0 +1,36 @@
+<html>
+
+<head>
+  <title>Timestamp Microservice</title>
+  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <link href="/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="container"><img src="/logo.png" alt="Timestamp Logo"></div>
+  <div class="container">
+    <h2>API Project: Timestamp Microservice - Java - Spring Boot</h2>
+    <h3>User Stories:</h3>
+    <ol>
+      <li>I can pass a string as a parameter, and it will check to see whether that string contains <br>either a unix
+        timestamp or a natural date (format 'yyyy-MM-dd')</li>
+      <li>If it does, it returns both the Unix timestamp and the natural language form of that date.</li>
+      <li>If it does not contain a date or Unix timestamp, it returns null for those properties.</li>
+    </ol>
+    <h3>Example Usage</h3>
+    <ul>
+      <li><a href="api/timestamp/2015-12-25">/api/timestamp/2015-12-25</a></li>
+      <li><a href="api/timestamp/1451001600000">/api/timestamp/1451001600000</a></li>
+    </ul>
+    <h3>Example Output:</h3>
+    <p><code>{ "unix": 1451001600000, "utc": "Fri Dec 25 00:00:00 GMT 2015" }</code></p>
+  </div>
+  <div class="footer">
+    <p> by <a href="https://www.emant.altervista.org">em-ant</a> | <a href="https://github.com/Em-Ant">github</a> |
+      <a href="https://codepen.io/Em-Ant/">codepen</a> | <a href="https://www.freecodecamp.com/em-ant">freeCodeCamp</a>
+    </p>
+  </div>
+</body>
+
+</html>

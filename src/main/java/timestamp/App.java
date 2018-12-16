@@ -22,8 +22,7 @@ public class App {
   } 
   @RequestMapping(value = API_TIMESTAMP_DATE_STRING, method = RequestMethod.GET)
   public Timestamp fromDateString (
-      @PathVariable("date_string") String dateString
-    ) throws DateParseException {
+    @PathVariable("date_string") String dateString) throws DateParseException {
 
     try {
       long unix_ts = new Long(dateString);

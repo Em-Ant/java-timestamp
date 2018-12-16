@@ -1,7 +1,7 @@
 package timestamp;
 
-import java.time.Instant;
-import java.time.format.DateTimeParseException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import lombok.Getter;
@@ -19,18 +19,21 @@ public class Timestamp {
   }
 
   public Timestamp(String s) throws DateParseException {
-    Instant i;
+    Date d;
     if (s == null) {
-      i = Instant.now();
+      d = new Date();
     } else {
       try {
-        i = Instant.parse(s);
-      } catch (DateTimeParseException e) {
-        throw new DateParseException(e.getMessage(), e.getErrorIndex());
+        SimpleDateFormat f = new SimpleDateFormat("yyy-MM-dd");
+        d = f.parse(s);
+      } catch (ParseException e) {
+        throw new DateParseException();
+      } catch (IllegalArgumentException i) {
+        throw new DateParseException();
       }
     } 
-    this.unix = i.toEpochMilli();
-    this.utc = i.toString();
+    this.unix = d.getTime();
+    this.utc = d.toString();
   }
 
   public Timestamp (long unix_ts) {
